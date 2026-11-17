@@ -1,0 +1,85 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/*
+  Design tokens. shadcn components never hard-code colors: they use names like
+  "background", "primary" or "sidebar-accent", which point at these variables.
+  Change a value here and every component follows. Values are HSL triplets.
+*/
+@layer base {
+  :root {
+    color-scheme: dark;
+
+    --background: 223 48% 7%;
+    --foreground: 210 40% 96%;
+    --card: 222 46% 11%;
+    --card-foreground: 210 40% 96%;
+    --popover: 222 46% 11%;
+    --popover-foreground: 210 40% 96%;
+
+    /* Cyan accent */
+    --primary: 188 86% 53%;
+    --primary-foreground: 223 48% 7%;
+
+    --secondary: 221 42% 15%;
+    --secondary-foreground: 210 40% 96%;
+    --muted: 221 42% 15%;
+    --muted-foreground: 218 18% 62%;
+    --accent: 221 42% 15%;
+    --accent-foreground: 210 40% 96%;
+
+    --destructive: 0 91% 71%;
+    --destructive-foreground: 223 48% 7%;
+    --success: 158 64% 52%;
+    --warning: 43 96% 56%;
+
+    --border: 220 38% 19%;
+    --input: 220 35% 27%;
+    --ring: 188 86% 53%;
+    --radius: 0.5rem;
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background font-sans text-foreground antialiased;
+  }
+  .dark {
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
